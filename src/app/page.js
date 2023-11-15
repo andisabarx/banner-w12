@@ -6,17 +6,16 @@ import './globals.css'
 
 export default function Home() {
 
-  const [bravo, setBravo] = useState(0)
-  const [nama, setNama] = useState('Andi Muhammad Sabar')
+  const [nama, setNama] = useState('Andi Muhammad Sabar');
+  const [newName, setNewNama] = useState("");
 
-  function handlerTambahBravo(){
-    setBravo(bravo + 1)
+  function handleInputChange(event) {
+      setNewNama(event.target.value);
   }
 
-  function handlerGantiNama(){
-    setNama('Expresidentz')
+  function handleChangeName() {
+    setNama(newName);
   }
-  
   
   return (
     <div className='body'>
@@ -27,7 +26,7 @@ export default function Home() {
           <div className="profile-header-banner">
             {/* Foto Profil*/}
             <Image
-              src="./assets/09.png"
+              src="/09.png"
               alt="Picture of the author"
               fill
               objectFit='contain'
@@ -39,22 +38,21 @@ export default function Home() {
             <div className="bio-nim-header-banner">
             {/* NIM dan BIO*/}
             <p>D121211032</p>
-            <p>Spider {bravo},=ibok</p>
+            <p>spideribo</p>
             </div>
           </div>
         </div>
         <div className="cta-banner-wrapper">
           {/* Tombol CTA */}
-            <div className='cta-button' onClick={handlerTambahBravo}>
-              <p>Change Name</p>
-            </div>
+            <input type='text' value={newName} onChange={handleInputChange}
+            placeholder='InputYour Name'/>
             <div className='cta-button' 
             style={{
               marginTop: '12px'
             }}
             
-            onClick={handlerGantiNama}>
-              <p>Ganti Nama</p>
+            onClick={handleChangeName}>
+              <p>Change Name</p>
             </div>
         </div>
       </div>

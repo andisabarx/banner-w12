@@ -36,7 +36,7 @@ p{
 
 /* Body website */
 .body{
-  background-color: #F4F4F4;
+  background-color: rgb(19, 19, 20);
 
   /* Fill Container di Figma == 100% di JS*/
   width: 100vw; 
@@ -82,16 +82,23 @@ p{
 }
 .cta-button{
   display: flex;
-  padding: 10px 177px;
+  padding: 10px 20px;
   justify-content: center;
   align-items: center;
   gap: 10px;
   align-self: stretch;
 
   border-radius: 12px;
-  background: #EFCA08;
+  background: #27A881;
 
 }
 .cta-button p{
   font-weight: 700;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 100px;
+  text-align: center;
 }
