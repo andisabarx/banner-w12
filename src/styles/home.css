@@ -6,7 +6,7 @@
   text-decoration: none;
 }
 
-/* Pilih Font */
+/* Font */
 h1, p{
   color: #1E1E1E;
   font-family: Plus Jakarta Sans;
@@ -19,14 +19,14 @@ h1{
   line-height: normal;
 }
 
-/* NIM dan BIO*/
+/* NIM dan ig*/
 p{
   font-weight: 400;
   font-size: 16px;
   line-height: normal;
 }
 
-/* Profile Picture*/
+/* Profile */
 .profile-header-banner{
   width: 120px;
   height: 120px;
@@ -38,7 +38,7 @@ p{
 .body{
   background-color: rgb(19, 19, 20);
 
-  /* Fill Container di Figma == 100% di JS*/
+  /* Fill Container  Figma = 100%  JS*/
   width: 100vw; 
   height: 100vh;
 
@@ -46,7 +46,7 @@ p{
   display: flex;
   flex-direction: column;
 
-  /* Kasih ke tengah flex */
+  /* ke tengah flex */
   align-items: center;
   justify-content: center;
 }
@@ -63,13 +63,13 @@ p{
   background-color: white;
   border-radius: 24px;
 }
-/* Header Container */
+/* Header pada Container */
 .header-banner-wrapper{
   display: flex;
   align-items: center;
   gap: 32px;
 }
-/* Content Container */
+/* Content pada Container */
 .content-header-banner{
   display: flex;
   flex-direction: column;
@@ -79,6 +79,8 @@ p{
 /*CTA*/
 .cta-banner-wrapper{
   width: 100%;
+  margin-top: 5px;
+  gap: 10px;
 }
 .cta-button{
   display: flex;
@@ -87,6 +89,7 @@ p{
   align-items: center;
   gap: 10px;
   align-self: stretch;
+  margin-top: 12px;
 
   border-radius: 12px;
   background: #27A881;
