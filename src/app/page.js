@@ -1,69 +1,75 @@
-"use client"
+'use client'
 
-import { useState } from "react";
-import Image from "next/legacy/image";
-import "@styles/home.css";
+import { useState } from 'react'
+import Image from 'next/image'
+import "@styles/home.css"
 
 export default function Home() {
-  const [isSimpan, setSimpan] = useState("");
-  const [nama, setNama] = useState("Andi Muhammad Sabar");
+  const [input, setInput] = useState("")
+  const handlerGantiNama = () => {
+    setNama(input)
+  }
+  
+  const [kosong, setKosong] = useState(true)
+  const [nama, setNama] = useState('Andi Muhammad Sabar')
+  const handlerInput = (val) => {
+    setInput(val)
+    setKosong(val.trim() === '')
+  }
 
-  function handlerInputNama(event) {
-    // Prevent the browser from reloading the page
-    event.preventDefault();
-    setSimpan(event.target.value);
+  function enterButton(e) {
+    if (e.key == "Enter") handlerGantiNama();
   }
-  function handlerSubmit(event) {
-    // Prevent the browser from reloading the page
-    setNama(isSimpan);
-  }
-  function handlerKeyEnter(e){
-    e.preventDefault
-    if (e.key === 'Enter'){
-      setSimpan(e.target.value)
-      setNama(isSimpan);
-    }
+
+  
+  let content;
+  if (kosong) {
+    content = (
+      <button className="cta active">
+        <p>IsiDong</p>
+      </button>
+    );
+  } else {
+    content = (
+      <button className="cta" onClick={() => {
+        handlerGantiNama();
+      }}>
+      <p>change Name</p>
+    </button>
+    );
   }
 
   return (
     <>
-      <div className="banner-container">
-        {/* Kartunya */}
-        <div className="header-banner-wrapper">
-          {/* Foto Profil dan Nama */}
-          <div className="profile-header-banner">
-            {/* Foto Profil*/}
-            <Image
-              src="/assets/09.png"
-              alt="Picture of the author"
-             layout="fill"
-              objectFit="contain"
-            />
+      <div className='banner-container'>
+        <div className='header-banner-wrapper'> 
+          <div className='profile-header-banner'>
+            <Image 
+            src='/assets/09.png'
+            alt='picture'
+            fill 
+            objectFit='contain'
+           />
           </div>
-          <div className="content-header-banner">
-            {/* Nama dan Kawan2*/}
+          <div className='content-header-banner'>
             <h1>{nama}</h1>
-            <div className="bio-nim-header-banner">
-            {/* NIM dan BIO*/}
-            <p>D121211032</p>
-            <p>spideribo</p>
+            <div className='bio-nim-header-banner'>
+              <p>D121211032</p>
+              <p>Spider130 </p>
             </div>
           </div>
         </div>
-        <div className="cta-banner-wrapper">
-          {/* Tombol CTA */}
-            <input
-             name="input-nama"
-             type="text"
-             placeholder="Input your name...."
-             onChange={handlerInputNama}
-             onKeyDown={handlerKeyEnter}
-           />
-           <div className="cta-button" onClick={handlerSubmit}>
-             <p>Change Name</p>
-           </div>
+        <div className='cta-banner-wrapper'>
+          <input
+            placeholder='Input your name'
+            onInput={(val) => handlerInput(val.target.value)}
+            onKeyDown={(value) => {
+              enterButton(value)
+            }}
+          ></input>
+          {content}
         </div>
       </div>
     </>
-  );
+  )
 }

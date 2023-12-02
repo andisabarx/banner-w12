@@ -1,107 +1,91 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&display=swap');
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-}
-
-/* Font */
-h1, p{
-  color: #1E1E1E;
+h1, p {
+  color: #1e1e1e;
   font-family: Plus Jakarta Sans;
 }
 
-/* Nama*/
-h1{
+h1 {
   font-weight: 700;
   font-size: 24px;
   line-height: normal;
 }
 
-/* NIM dan ig*/
-p{
+p {
   font-weight: 400;
   font-size: 16px;
   line-height: normal;
 }
 
-/* Profile */
-.profile-header-banner{
+.profile-header-banner {
   width: 120px;
   height: 120px;
-  
   position: relative;
 }
 
-/* Body website */
-.body{
-  background-color: rgb(19, 19, 20);
-
-  /* Fill Container  Figma = 100%  JS*/
-  width: 100vw; 
-  height: 100vh;
-
-  /* Arah Flex */
+.banner-container {
   display: flex;
-  flex-direction: column;
-
-  /* ke tengah flex */
-  align-items: center;
-  justify-content: center;
-}
-
-/* Container */
-.banner-container{
-  display: flex;
-  width: 442px;
-  padding: 24px;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
   flex-shrink: 0;
-  background-color: white;
+  gap: 24px;
+  width: 480px;
+  padding: 24px;
   border-radius: 24px;
+  background-color: white;
 }
-/* Header pada Container */
-.header-banner-wrapper{
+
+.header-banner-wrapper {
   display: flex;
   align-items: center;
+  align-self: stretch;
   gap: 32px;
 }
-/* Content pada Container */
-.content-header-banner{
+
+.content-header-banner {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 4px;
 }
-/*CTA*/
-.cta-banner-wrapper{
+
+.cta-banner-wrapper {
   width: 100%;
-  margin-top: 5px;
-  gap: 10px;
 }
-.cta-button{
-  display: flex;
-  padding: 10px 20px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  align-self: stretch;
-  margin-top: 12px;
 
-  border-radius: 12px;
-  background: #27A881;
-
-}
-.cta-button p{
+.cta.active {
+  background-color: #e41010;
+  color: #413d39;
+  cursor: no-drop;
   font-weight: 700;
 }
 
 input {
   width: 100%;
   padding: 10px;
-  border-radius: 100px;
+  border-radius: 12px;
   text-align: center;
+  margin-bottom: 12px;
+}
+
+button {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 12px;
+  background: #b642dd;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #230324f1;
+}
+
+button p {
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  font-style: normal;
+  line-height: normal;
 }
